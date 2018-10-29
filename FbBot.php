@@ -68,21 +68,21 @@ class FbBot {
             $header      = array(
                 'content-type' => 'application/json',
             );
+
+            $answer = [
+                'text' => 'Yeah'
+            ];
+
+            $response = [
+                'recipient' => ['id' => $senderId],
+                'message' => $answer,
+                'access_token' => $this->accessToken
+            ];
+            $response = $client->post($url, ['query' => $response, 'headers' => $header]);
+            return true;
         } catch (RequestException $e) {
             $response = json_decode($e->getResponse()->getBody(true)->getContents());
             return $response;
         }
-
-        $answer = [
-            'text' => 'Yeah'
-        ];
-
-        $response = [
-            'recipient' => ['id' => $senderId],
-            'message' => $answer,
-            'access_token' => $this->accessToken
-        ];
-        $response = $client->post($url, ['query' => $response, 'headers' => $header]);
-        return true;
     }
 }
