@@ -82,7 +82,7 @@ class FbBot {
             'message' => $answer,
             'access_token' => $this->accessToken
         ];
-        $response = $client->post($url, ['query' => $response, 'headers' => $header]);
+        $response = $client->postAsync($url, ['query' => $response, 'headers' => $header]);
         return true;
     }
 }

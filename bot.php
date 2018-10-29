@@ -14,7 +14,7 @@ set_exception_handler(function($exception) {
 $token = $_REQUEST['hub_verify_token'];
 $hubVerifyToken = 'masterbruce';
 $challenge = $_REQUEST['hub_challenge'];
-$accessToken = getenv('FB_ACCESS_TOKEN');
+$accessToken = 'EAACtJPoHTQcBAJQwSEMBTGPBrllQSVJAmTgUDxPWy2y9g5hT8MQwqZA445tsedcsFcLV5Qs8WP1G2Qbx1EuOqSx9gyRKmf9XUT0kLdc2T7ZCqef6n4Fa3ihgoPyq51uC4ATcZCJpVflV4gycABj63ecJcVkzWUkmIzxrMbPuAZDZD';
 
 $bot = new FbBot();
 $bot->setHubVerifyToken($hubVerifyToken);
