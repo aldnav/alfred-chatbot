@@ -11,15 +11,19 @@ set_exception_handler(function($exception) {
    // error_page("Something went wrong!");
 });
 
+if (!$_REQUEST['hub_verify_token'] && !$_REQUEST['hub_challenge']) {
+    die('Houston, we have a problem.');
+}
+
 $token = $_REQUEST['hub_verify_token'];
 $hubVerifyToken = 'masterbruce';
 $challenge = $_REQUEST['hub_challenge'];
-$accessToken = 'EAACtJPoHTQcBAJZCwVcjLahg4FmXpeyFauJ5HbVni0Y7RW00EcHvFTRA11E0fZBvPibAyez7rj0kaE75vNGVDxQmutmBmX7qx2ZCORHtE9y4HvgsZBZCZAwoznCFQ5Nk00Ft8mcZC2QhVVecteuIFpSV7DD1VNsGpPkcb8WW4AiDAZDZD';
+$accessToken = file_get_contents(__DIR__ .'/accesstoken.txt');
 
 $bot = new FbBot();
 $bot->setHubVerifyToken($hubVerifyToken);
 $bot->setAccessToken($accessToken);
-echo $bot->verifyToken($token, $challenge);
+$bot->verifyToken($token, $challenge);
 
 $input = json_decode(file_get_contents('php://input'), true);
 $message = $bot->readMessage($input);

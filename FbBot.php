@@ -22,6 +22,13 @@ class FbBot {
     }
 
     public function verifyToken($hubVerifyToken, $challenge) {
+        // if (!$hubVerifyToken) {
+        //     throw new Exception('"$hubVerifyToken" is required');
+        // }
+        // if (!$challenge) {
+        //     throw new Exception('"$challenge" is required');
+        // }
+
         try {
             if ($hubVerifyToken === $this->hubVerifyToken) {
                 return $challenge;
