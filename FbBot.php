@@ -77,7 +77,7 @@ class FbBot {
             );
 
             $answer = [
-                'text' => 'Yeah'
+                'text' => $messageText
             ];
 
             $response = [
