@@ -20,7 +20,7 @@ ngrok http
 # visit web portal provided by running the ngrok command above
 ```
 
-Update your messenger app's event subscription setting to point to the ngrok url above. Validate with the token you pro vide, e.g. `masterbruce`. Once validated, you are now ready to interact with the bot.
+Update your messenger app's event subscription setting to point to the ngrok url above. Validate with the token you provide, e.g. `masterbruce`. Once validated, you are now ready to interact with the bot.
 
 > If you stop ngrok and run it again, it will give you another ngrok endpoint when you use the free plan. This means that you need to update your messenger apps' url setting to point to the new ngrok endpoint.
 
