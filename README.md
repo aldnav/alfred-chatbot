@@ -1,10 +1,28 @@
-Alfred
+🤵 🤖 Alfred
 ---
 
 Alfred's proxy chatbot written in PHP
 
 Entry point: `bot.php`
 
+# Setup instructions
+> LAMP/XAMPP stack must be setup first
+
+```sh
+cd public_html/  # or /var/www/html/
+git clone git@github.com:aldnav/alfred-chatbot chatbot
+cd chatbot
+composer install
+ngrok http
+# should now be accessible via
+# if from public_html/ - https://<ngrok-url>/~<pc-username>/chatbot/bot.php - e.g. https://g2kcx3.cf/~aldnav/chatbot/bot.php
+# if from /var/www...  - https://<ngrok-url>/chatbot/bot.php
+# visit web portal provided by running the ngrok command above
+```
+
+Update your messenger app's event subscription setting to point to the ngrok url above. Validate with the token you pro vide, e.g. `masterbruce`. Once validated, you are now ready to interact with the bot.
+
+> If you stop ngrok and run it again, it will give you another ngrok endpoint when you use the free plan. This means that you need to update your messenger apps' url setting to point to the new ngrok endpoint.
 
 # Contributing Guide
 
