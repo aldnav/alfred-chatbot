@@ -6,6 +6,16 @@ Alfred's proxy chatbot written in PHP
 Entry point: `bot.php`
 
 
+# Installation
+
+```
+sudo apt install mongodb-org mongodb-org-server
+sudo systemctl start mongod
+sudo systemctl status mongod
+composer install
+sudo service apache2 restart
+```
+
 # Contributing Guide
 
 First off, thank you for taking the time to contribute!
