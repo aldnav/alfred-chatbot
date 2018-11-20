@@ -1,6 +1,6 @@
 <?php
 
-require 'vendor/autoload.php';
+require_once __DIR__ . "/vendor/autoload.php";
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\Request;
@@ -11,7 +11,10 @@ class FbBot {
     private $token = false;
     protected $client = null;
 
-    function __construct() {}
+    function __construct() {
+        // access prod collection in sessions database
+        $this->sessions = (new MongoDB\Client)->prod->sessions;
+    }
 
     public function setHubVerifyToken($value) {
         $this->hubVerifyToken = $value;
@@ -54,6 +57,30 @@ class FbBot {
         } catch (Exception $ex) {
             return $ex->getMessage();
         }
+    }
+
+    public function processMessage($input) {
+        $session = $this->getSession($input);
+        if (!$session) {
+            $this->createSessionForUser($input);
+        }
+        var_dump($session);
+    }
+
+
+    public function getSession($input) {
+        if (!isset($input['senderid'])) {
+            return;
+        }
+        return $this->sessions->findOne(['sender_id' => $input['senderid']]);
+    }
+
+    public function createSessionForUser($input) {
+        $insertOneSession = $this->sessions->insertOne([
+            'sender_id' => $input['senderid'],
+            'command' => 'default'
+        ]);
+        var_dump($insertOneSession->getInsertedId());
     }
 
     public function sendMessage($input) {
