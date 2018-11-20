@@ -19,8 +19,9 @@ if(isset($_REQUEST['hub_challenge'])) {
 }
 
 $debug = True;
+$GLOBALS['DEBUG'] = $debug;
 $bot = new FbBot();
-if ($debug) {
+if (!$debug) {
     $bot->setHubVerifyToken($hubVerifyToken);
     echo $bot->verifyToken($token, $challenge);
 }
