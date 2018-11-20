@@ -2,7 +2,8 @@
     "name": "aldnav/alfred-chatbot",
     "description": "Your friendly personal assistant",
     "require": {
-        "guzzlehttp/guzzle": "~6.0"
+        "guzzlehttp/guzzle": "~6.0",
+        "mongodb/mongodb": "^1.4"
     },
     "authors": [
         {
