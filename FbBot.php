@@ -4,6 +4,9 @@ require_once __DIR__ . "/vendor/autoload.php";
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\Request;
+include_once 'Commands/BaseCommand.php';
+include_once 'Commands/Twitter.php';
+
 
 class FbBot {
     private $hubVerifyToken = null;
@@ -13,7 +16,21 @@ class FbBot {
 
     function __construct() {
         // access prod collection in sessions database
-        $this->sessions = (new MongoDB\Client)->prod->sessions;
+        if ($GLOBALS['DEBUG']) {
+            $this->sessions = (new MongoDB\Client)->debug->sessions;
+        } else {
+            $this->sessions = (new MongoDB\Client)->prod->sessions;
+        }
+
+        // init routes
+        $args = array(
+            'bot' => $this
+        );
+        $this->ROUTES = array(
+            'LISTEN' => new TwitterCommand($args),
+            'REMIND' => new BaseCommand($args)
+        );
+        $this->DefaultCommand = new BaseCommand($args);
     }
 
     public function setHubVerifyToken($value) {
@@ -65,6 +82,13 @@ class FbBot {
             $this->createSessionForUser($input);
         }
         var_dump($session);
+
+        $input_cmd = explode(' ', trim($input['message']))[0];
+        if (isset($this->ROUTES[$input_cmd])) {
+            $this->ROUTES[$input_cmd]->handle($input);
+        } else {
+            $this->DefaultCommand->handle($input);
+        }
     }
 
 
