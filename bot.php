@@ -18,9 +18,12 @@ if(isset($_REQUEST['hub_challenge'])) {
     $token = $_REQUEST['hub_verify_token'];
 }
 
+$debug = True;
 $bot = new FbBot();
-$bot->setHubVerifyToken($hubVerifyToken);
-echo $bot->verifyToken($token, $challenge);
+if ($debug) {
+    $bot->setHubVerifyToken($hubVerifyToken);
+    echo $bot->verifyToken($token, $challenge);
+}
 
 // handle bot responses
 $accessToken = file_get_contents(__DIR__ .'/accesstoken.txt');
@@ -28,4 +31,5 @@ $bot->setAccessToken($accessToken);
 
 $input = json_decode(file_get_contents('php://input'), true);
 $message = $bot->readMessage($input);
-$textmessage = $bot->sendMessage($message);
+$bot->processMessage($message);
+// $textmessage = $bot->sendMessage($message);
