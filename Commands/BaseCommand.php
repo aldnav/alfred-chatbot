@@ -13,4 +13,11 @@ class BaseCommand {
         var_dump($input);
     }
 
+    public function setUserCommand($input, $commandName) {
+        $this->$bot->collection->updateOne(
+            ['sender_id' => $input['senderid']],
+            ['$set' => ['command' => $commandName]]
+        );
+    }
+
 }
