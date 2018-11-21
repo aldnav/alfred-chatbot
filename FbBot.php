@@ -17,10 +17,11 @@ class FbBot {
     function __construct() {
         // access prod collection in sessions database
         if ($GLOBALS['DEBUG']) {
-            $this->sessions = (new MongoDB\Client)->debug->sessions;
+            $this->collection = (new MongoDB\Client)->debug;
         } else {
-            $this->sessions = (new MongoDB\Client)->prod->sessions;
+            $this->collection = (new MongoDB\Client)->prod;
         }
+        $this->sessions = $this->collection->sessions;
 
         // init routes
         $args = array(
@@ -79,16 +80,18 @@ class FbBot {
     public function processMessage($input) {
         $session = $this->getSession($input);
         if (!$session) {
-            $this->createSessionForUser($input);
+            $session = $this->createSessionForUser($input);
         }
-        var_dump($session);
 
         $input_cmd = explode(' ', trim($input['message']))[0];
+        $command = $this->DefaultCommand;
         if (isset($this->ROUTES[$input_cmd])) {
             $this->ROUTES[$input_cmd]->handle($input);
         } else {
             $this->DefaultCommand->handle($input);
         }
+        $command->handle($input);
+        $command->setUserCommand($input, $input_cmd);
     }
 
 
@@ -104,7 +107,7 @@ class FbBot {
             'sender_id' => $input['senderid'],
             'command' => 'default'
         ]);
-        var_dump($insertOneSession->getInsertedId());
+        return $insertOneSession->getInsertedId();
     }
 
     public function sendMessage($input) {
