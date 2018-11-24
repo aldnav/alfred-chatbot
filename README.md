@@ -30,15 +30,47 @@ First off, thank you for taking the time to contribute!
 
 When contributing to this repository, please first discuss the change you wish to make via issue, email, or any other method with the owners of this repository before making a change.
 
-Please note we have a code of conduct, please follow it in all your interactions with the project.
+Local development workflow:
 
-## Pull Request Process
+```
+- Postman sends request -> FbBot receives requests -> Commands process messages -> Sends back response -> Postman displays response
+                                FbBot.php               \Commands\Twitter.php
+                                                        \Commands\Reminder.php
+                                                        \Commands\Base.php
+```
 
-1. Ensure any install or build dependencies are removed before the end of the layer when doing a 
-   build.
-2. Update the README.md with details of changes to the interface, this includes new environment 
-   variables, exposed ports, useful file locations and container parameters.
-3. Increase the version numbers in any examples files and the README.md to the new version that this
-   Pull Request would represent. The versioning scheme we use is [SemVer](http://semver.org/).
-4. You may merge the Pull Request in once you have the sign-off of two other developers, or if you 
-   do not have permission to do that, you may request the second reviewer to merge it for you.
+---
+
+Code management:
+
+### Making updates
+
+- Create a branch. Branch out from master always. `-b` means create and checkout a new branch. For more help, type `git {command} -h`
+```
+git checkout master
+git checkout -b feature/simple-reminder
+```
+- Make changes.
+- Add changes.
+```
+git add {list of files you want to add}
+```
+- Commit to changes made. Describe what the update is about.
+```
+git commit -m "Add a simple reminder list"
+```
+- Make more changes and follow the previous steps. Or, when you think you have to save this to our remote repository (e.g. aldnav/alfred-chatbot)
+`git push origin feature/simple-reminder`
+
+### Pulling updates
+- Pull updates from the branches you need
+```
+git checkout feature/simple-reminder
+```
+- If there are conflicts, check the files listed. Resolve them first by editing each conflicted file.
+
+### Creating a Pull Request
+When you are ready to get your code reviewed, create a pull request.
+"Base" means the branch where you want it merged. So for example, you are done with the `simple-reminder` feature, you create a `base: master <- compare:feature/simple-reminder` pull request.
+
+Wait for others to review your work. This is important to keep the `master` branch stable and working.
