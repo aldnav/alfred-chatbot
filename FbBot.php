@@ -86,9 +86,7 @@ class FbBot {
         $input_cmd = explode(' ', trim($input['message']))[0];
         $command = $this->DefaultCommand;
         if (isset($this->ROUTES[$input_cmd])) {
-            $this->ROUTES[$input_cmd]->handle($input);
-        } else {
-            $this->DefaultCommand->handle($input);
+            $command = $this->ROUTES[$input_cmd];
         }
         $command->handle($input);
         $command->setUserCommand($input, $input_cmd);
@@ -114,7 +112,7 @@ class FbBot {
         try {
             $client      = new Client();
             $url         = "https://graph.facebook.com/v2.6/me/messages";
-            $messageText = strtolower($input['message']);
+            $messageText = $input['message'];
             $senderId    = $input['senderid'];
             $msgarray    = explode(' ', $messageText);
             $response    = null;
