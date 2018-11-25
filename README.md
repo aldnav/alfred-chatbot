@@ -24,6 +24,16 @@ Update your messenger app's event subscription setting to point to the ngrok url
 
 > If you stop ngrok and run it again, it will give you another ngrok endpoint when you use the free plan. This means that you need to update your messenger apps' url setting to point to the new ngrok endpoint.
 
+# Installation
+
+```
+sudo apt install mongodb-org mongodb-org-server
+sudo systemctl start mongod
+sudo systemctl status mongod
+composer install
+sudo service apache2 restart
+```
+
 # Contributing Guide
 
 First off, thank you for taking the time to contribute!

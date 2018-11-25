@@ -1,9 +1,12 @@
 <?php
 
-require 'vendor/autoload.php';
+require_once __DIR__ . "/vendor/autoload.php";
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Psr7\Request;
+include_once 'Commands/BaseCommand.php';
+include_once 'Commands/Twitter.php';
+
 
 class FbBot {
     private $hubVerifyToken = null;
@@ -11,7 +14,25 @@ class FbBot {
     private $token = false;
     protected $client = null;
 
-    function __construct() {}
+    function __construct() {
+        // access prod collection in sessions database
+        if ($GLOBALS['DEBUG']) {
+            $this->collection = (new MongoDB\Client)->debug;
+        } else {
+            $this->collection = (new MongoDB\Client)->prod;
+        }
+        $this->sessions = $this->collection->sessions;
+
+        // init routes
+        $args = array(
+            'bot' => $this
+        );
+        $this->ROUTES = array(
+            'LISTEN' => new TwitterCommand($args),
+            'REMIND' => new BaseCommand($args)
+        );
+        $this->DefaultCommand = new BaseCommand($args);
+    }
 
     public function setHubVerifyToken($value) {
         $this->hubVerifyToken = $value;
@@ -56,11 +77,42 @@ class FbBot {
         }
     }
 
+    public function processMessage($input) {
+        $session = $this->getSession($input);
+        if (!$session) {
+            $session = $this->createSessionForUser($input);
+        }
+
+        $input_cmd = explode(' ', trim($input['message']))[0];
+        $command = $this->DefaultCommand;
+        if (isset($this->ROUTES[$input_cmd])) {
+            $command = $this->ROUTES[$input_cmd];
+        }
+        $command->handle($input);
+        $command->setUserCommand($input, $input_cmd);
+    }
+
+
+    public function getSession($input) {
+        if (!isset($input['senderid'])) {
+            return;
+        }
+        return $this->sessions->findOne(['sender_id' => $input['senderid']]);
+    }
+
+    public function createSessionForUser($input) {
+        $insertOneSession = $this->sessions->insertOne([
+            'sender_id' => $input['senderid'],
+            'command' => 'default'
+        ]);
+        return $insertOneSession->getInsertedId();
+    }
+
     public function sendMessage($input) {
         try {
             $client      = new Client();
             $url         = "https://graph.facebook.com/v2.6/me/messages";
-            $messageText = strtolower($input['message']);
+            $messageText = $input['message'];
             $senderId    = $input['senderid'];
             $msgarray    = explode(' ', $messageText);
             $response    = null;
