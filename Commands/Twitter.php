@@ -1,29 +1,32 @@
 <?php
-use GuzzleHttp\Client;
-use GuzzleHttp\Exception\RequestException;
 
+use Abraham\TwitterOAuth\TwitterOAuth;
+use Symfony\Component\Yaml\Yaml;
 include_once 'BaseCommand.php';
+
+$settings = Yaml::parse(file_get_contents(__DIR__ . '/../twitterauth.yaml'));
+$consumer_key = $settings['consumer_key'];
+$consumer_secret = $settings['consumer_secret'];
+$access_token = $settings['access_token'];
+$access_token_secret = $settings['access_token_secret'];
+
 
 class TwitterCommand extends BaseCommand {
     protected $twitterSessions;
-    protected $searchEndpoint = 'https://api.twitter.com/1.1/search/tweets.json';
 
     function __construct($args) {
         if (isset($args['bot'])) {
             $this->$bot = $args['bot'];
             $this->twitterSessions = $this->$bot->collection->twitter;
         }
-        $this->client = new Client();
-        $this->headers = array(
-            'authorization' => 'OAuth',
-            'oauth_consumer_key' => "l7bMfBG75mqr0YtrPoD59l6xJ", 
-            'oauth_nonce' => "kYjzVBB8Y0ZFabxSWbWovY3uYSQ2pTgmZeNu2VS4cg",
-            // 'oauth_signature' => "generated-signature", 
-            'oauth_signature_method' => "HMAC-SHA1",
-            'oauth_timestamp' => time(), 
-            'oauth_token' => "1246167145-yy4o5YcHJm3ZzxPJMLDVOsRFojY7HNTDuAT37h8",
-            'oauth_version' => "1.0"
-        );
+        global $consumer_key;
+        global $consumer_secret;
+        global $access_token;
+        global $access_token_secret;
+        $this->connection = new TwitterOAuth($consumer_key, $consumer_secret, $access_token, $access_token_secret);
+        $this->connection->host = "https://api.twitter.com/1.1/";
+        $this->connection->ssl_verifypeer = TRUE;
+        $this->connection->content_type = 'application/x-www-form-urlencoded';
     }
 
     public function handle($input) {
@@ -31,17 +34,10 @@ class TwitterCommand extends BaseCommand {
 
         $output['message'] = 'FROM TWITTER COMMAND: hi';
         $this->$bot->sendMessage($output);
-
-        $this->getLatestTweet($input['message']);
     }
 
     public function getLatestTweet($topic) {
-        $apiEndpoint = $this->searchEndpoint . '?q=' . $topic;
-        var_dump($apiEndpoint);
-
-        $response = $this->client->post($apiEndpoint, [
-            'headers' => $this->headers
-        ]);
+        $response = $this->connection->get('search/tweets', ['q' => $topic]);
         var_dump('-*-*-*-*-');
         var_dump($response);
     }
