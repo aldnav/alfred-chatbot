@@ -18,7 +18,7 @@ if(isset($_REQUEST['hub_challenge'])) {
     $token = $_REQUEST['hub_verify_token'];
 }
 
-$debug = True;
+$debug = FALSE;
 $GLOBALS['DEBUG'] = $debug;
 $bot = new FbBot();
 if (!$debug) {
