@@ -1,3 +1,5 @@
 vendor/
 errors.log
 accesstoken.txt
+twitterauth.yaml
+twitter_alerts.log

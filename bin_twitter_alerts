@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# to view, ps -l
+# to stop, kill -9 <PID>
+php Contrib/TwitterAlerts.php > twitter_alerts.log 2>&1 &

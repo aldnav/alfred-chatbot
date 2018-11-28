@@ -53,7 +53,7 @@ class BaseCommand {
     }
 
     public function setUserCommand($input, $commandName) {
-        $this->$bot->collection->updateOne(
+        $this->$bot->sessions->updateOne(
             ['sender_id' => $input['senderid']],
             ['$set' => ['command' => $commandName]]
         );

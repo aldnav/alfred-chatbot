@@ -1,0 +1,708 @@
+object(stdClass)#69 (2) {
+  ["statuses"]=>
+  array(1) {
+    [0]=>
+    object(stdClass)#2 (25) {
+      ["created_at"]=>
+      string(30) "Wed Nov 28 13:48:56 +0000 2018"
+      ["id"]=>
+      int(1067777363608518658)
+      ["id_str"]=>
+      string(19) "1067777363608518658"
+      ["text"]=>
+      string(151) "RT @RemlandCarpets: Santa's letter...😆👹🎅 #wrongaddress #letters #Santasletter #pets #puppy #pictures #art #wtf #lol #sarcastic #Xmas #WinXm…"
+      ["truncated"]=>
+      bool(false)
+      ["entities"]=>
+      object(stdClass)#40 (4) {
+        ["hashtags"]=>
+        array(11) {
+          [0]=>
+          object(stdClass)#26 (2) {
+            ["text"]=>
+            string(12) "wrongaddress"
+            ["indices"]=>
+            array(2) {
+              [0]=>
+              int(41)
+              [1]=>
+              int(54)
+            }
+          }
+          [1]=>
+          object(stdClass)#27 (2) {
+            ["text"]=>
+            string(7) "letters"
+            ["indices"]=>
+            array(2) {
+              [0]=>
+              int(55)
+              [1]=>
+              int(63)
+            }
+          }
+          [2]=>
+          object(stdClass)#28 (2) {
+            ["text"]=>
+            string(12) "Santasletter"
+            ["indices"]=>
+            array(2) {
+              [0]=>
+              int(64)
+              [1]=>
+              int(77)
+            }
+          }
+          [3]=>
+          object(stdClass)#32 (2) {
+            ["text"]=>
+            string(4) "pets"
+            ["indices"]=>
+            array(2) {
+              [0]=>
+              int(78)
+              [1]=>
+              int(83)
+            }
+          }
+          [4]=>
+          object(stdClass)#33 (2) {
+            ["text"]=>
+            string(5) "puppy"
+            ["indices"]=>
+            array(2) {
+              [0]=>
+              int(84)
+              [1]=>
+              int(90)
+            }
+          }
+          [5]=>
+          object(stdClass)#34 (2) {
+            ["text"]=>
+            string(8) "pictures"
+            ["indices"]=>
+            array(2) {
+              [0]=>
+              int(91)
+              [1]=>
+              int(100)
+            }
+          }
+          [6]=>
+          object(stdClass)#35 (2) {
+            ["text"]=>
+            string(3) "art"
+            ["indices"]=>
+            array(2) {
+              [0]=>
+              int(101)
+              [1]=>
+              int(105)
+            }
+          }
+          [7]=>
+          object(stdClass)#36 (2) {
+            ["text"]=>
+            string(3) "wtf"
+            ["indices"]=>
+            array(2) {
+              [0]=>
+              int(106)
+              [1]=>
+              int(110)
+            }
+          }
+          [8]=>
+          object(stdClass)#37 (2) {
+            ["text"]=>
+            string(3) "lol"
+            ["indices"]=>
+            array(2) {
+              [0]=>
+              int(111)
+              [1]=>
+              int(115)
+            }
+          }
+          [9]=>
+          object(stdClass)#38 (2) {
+            ["text"]=>
+            string(9) "sarcastic"
+            ["indices"]=>
+            array(2) {
+              [0]=>
+              int(116)
+              [1]=>
+              int(126)
+            }
+          }
+          [10]=>
+          object(stdClass)#39 (2) {
+            ["text"]=>
+            string(4) "Xmas"
+            ["indices"]=>
+            array(2) {
+              [0]=>
+              int(127)
+              [1]=>
+              int(132)
+            }
+          }
+        }
+        ["symbols"]=>
+        array(0) {
+        }
+        ["user_mentions"]=>
+        array(1) {
+          [0]=>
+          object(stdClass)#41 (5) {
+            ["screen_name"]=>
+            string(14) "RemlandCarpets"
+            ["name"]=>
+            string(15) "Remland Carpets"
+            ["id"]=>
+            int(166169214)
+            ["id_str"]=>
+            string(9) "166169214"
+            ["indices"]=>
+            array(2) {
+              [0]=>
+              int(3)
+              [1]=>
+              int(18)
+            }
+          }
+        }
+        ["urls"]=>
+        array(0) {
+        }
+      }
+      ["metadata"]=>
+      object(stdClass)#42 (2) {
+        ["iso_language_code"]=>
+        string(2) "en"
+        ["result_type"]=>
+        string(6) "recent"
+      }
+      ["source"]=>
+      string(66) "<a href="http://twitter.com" rel="nofollow">Twitter Web Client</a>"
+      ["in_reply_to_status_id"]=>
+      NULL
+      ["in_reply_to_status_id_str"]=>
+      NULL
+      ["in_reply_to_user_id"]=>
+      NULL
+      ["in_reply_to_user_id_str"]=>
+      NULL
+      ["in_reply_to_screen_name"]=>
+      NULL
+      ["user"]=>
+      object(stdClass)#43 (42) {
+        ["id"]=>
+        int(45594600)
+        ["id_str"]=>
+        string(8) "45594600"
+        ["name"]=>
+        string(15) "Emma S Anderson"
+        ["screen_name"]=>
+        string(8) "Merserie"
+        ["location"]=>
+        string(7) "Norwich"
+        ["description"]=>
+        string(160) "I like: reading, drinking tea whilst eating cake, wine, ale, metal, hiking & camping with the kids, and lots of other stuff... like my amazingly awesome family!"
+        ["url"]=>
+        string(23) "https://t.co/5HjNlToRtZ"
+        ["entities"]=>
+        object(stdClass)#46 (2) {
+          ["url"]=>
+          object(stdClass)#45 (1) {
+            ["urls"]=>
+            array(1) {
+              [0]=>
+              object(stdClass)#44 (4) {
+                ["url"]=>
+                string(23) "https://t.co/5HjNlToRtZ"
+                ["expanded_url"]=>
+                string(32) "https://www.facebook.com/?ref=hp"
+                ["display_url"]=>
+                string(20) "facebook.com/?ref=hp"
+                ["indices"]=>
+                array(2) {
+                  [0]=>
+                  int(0)
+                  [1]=>
+                  int(23)
+                }
+              }
+            }
+          }
+          ["description"]=>
+          object(stdClass)#47 (1) {
+            ["urls"]=>
+            array(0) {
+            }
+          }
+        }
+        ["protected"]=>
+        bool(false)
+        ["followers_count"]=>
+        int(1298)
+        ["friends_count"]=>
+        int(4990)
+        ["listed_count"]=>
+        int(194)
+        ["created_at"]=>
+        string(30) "Mon Jun 08 15:50:10 +0000 2009"
+        ["favourites_count"]=>
+        int(1626)
+        ["utc_offset"]=>
+        NULL
+        ["time_zone"]=>
+        NULL
+        ["geo_enabled"]=>
+        bool(false)
+        ["verified"]=>
+        bool(false)
+        ["statuses_count"]=>
+        int(34199)
+        ["lang"]=>
+        string(2) "en"
+        ["contributors_enabled"]=>
+        bool(false)
+        ["is_translator"]=>
+        bool(false)
+        ["is_translation_enabled"]=>
+        bool(false)
+        ["profile_background_color"]=>
+        string(6) "0099B9"
+        ["profile_background_image_url"]=>
+        string(48) "http://abs.twimg.com/images/themes/theme4/bg.gif"
+        ["profile_background_image_url_https"]=>
+        string(49) "https://abs.twimg.com/images/themes/theme4/bg.gif"
+        ["profile_background_tile"]=>
+        bool(true)
+        ["profile_image_url"]=>
+        string(75) "http://pbs.twimg.com/profile_images/524638092796235776/j7BLOVWA_normal.jpeg"
+        ["profile_image_url_https"]=>
+        string(76) "https://pbs.twimg.com/profile_images/524638092796235776/j7BLOVWA_normal.jpeg"
+        ["profile_banner_url"]=>
+        string(57) "https://pbs.twimg.com/profile_banners/45594600/1474710058"
+        ["profile_link_color"]=>
+        string(6) "4A913C"
+        ["profile_sidebar_border_color"]=>
+        string(6) "5ED4DC"
+        ["profile_sidebar_fill_color"]=>
+        string(6) "95E8EC"
+        ["profile_text_color"]=>
+        string(6) "3C3940"
+        ["profile_use_background_image"]=>
+        bool(true)
+        ["has_extended_profile"]=>
+        bool(true)
+        ["default_profile"]=>
+        bool(false)
+        ["default_profile_image"]=>
+        bool(false)
+        ["following"]=>
+        bool(false)
+        ["follow_request_sent"]=>
+        bool(false)
+        ["notifications"]=>
+        bool(false)
+        ["translator_type"]=>
+        string(4) "none"
+      }
+      ["geo"]=>
+      NULL
+      ["coordinates"]=>
+      NULL
+      ["place"]=>
+      NULL
+      ["contributors"]=>
+      NULL
+      ["retweeted_status"]=>
+      object(stdClass)#48 (25) {
+        ["created_at"]=>
+        string(30) "Wed Nov 28 10:30:12 +0000 2018"
+        ["id"]=>
+        int(1067727351293927425)
+        ["id_str"]=>
+        string(19) "1067727351293927425"
+        ["text"]=>
+        string(148) "Santa's letter...😆👹🎅 #wrongaddress #letters #Santasletter #pets #puppy #pictures #art #wtf #lol #sarcastic #Xmas… https://t.co/VuRxsK1ZND"
+        ["truncated"]=>
+        bool(true)
+        ["entities"]=>
+        object(stdClass)#60 (4) {
+          ["hashtags"]=>
+          array(11) {
+            [0]=>
+            object(stdClass)#49 (2) {
+              ["text"]=>
+              string(12) "wrongaddress"
+              ["indices"]=>
+              array(2) {
+                [0]=>
+                int(21)
+                [1]=>
+                int(34)
+              }
+            }
+            [1]=>
+            object(stdClass)#50 (2) {
+              ["text"]=>
+              string(7) "letters"
+              ["indices"]=>
+              array(2) {
+                [0]=>
+                int(35)
+                [1]=>
+                int(43)
+              }
+            }
+            [2]=>
+            object(stdClass)#51 (2) {
+              ["text"]=>
+              string(12) "Santasletter"
+              ["indices"]=>
+              array(2) {
+                [0]=>
+                int(44)
+                [1]=>
+                int(57)
+              }
+            }
+            [3]=>
+            object(stdClass)#52 (2) {
+              ["text"]=>
+              string(4) "pets"
+              ["indices"]=>
+              array(2) {
+                [0]=>
+                int(58)
+                [1]=>
+                int(63)
+              }
+            }
+            [4]=>
+            object(stdClass)#53 (2) {
+              ["text"]=>
+              string(5) "puppy"
+              ["indices"]=>
+              array(2) {
+                [0]=>
+                int(64)
+                [1]=>
+                int(70)
+              }
+            }
+            [5]=>
+            object(stdClass)#54 (2) {
+              ["text"]=>
+              string(8) "pictures"
+              ["indices"]=>
+              array(2) {
+                [0]=>
+                int(71)
+                [1]=>
+                int(80)
+              }
+            }
+            [6]=>
+            object(stdClass)#55 (2) {
+              ["text"]=>
+              string(3) "art"
+              ["indices"]=>
+              array(2) {
+                [0]=>
+                int(81)
+                [1]=>
+                int(85)
+              }
+            }
+            [7]=>
+            object(stdClass)#56 (2) {
+              ["text"]=>
+              string(3) "wtf"
+              ["indices"]=>
+              array(2) {
+                [0]=>
+                int(86)
+                [1]=>
+                int(90)
+              }
+            }
+            [8]=>
+            object(stdClass)#57 (2) {
+              ["text"]=>
+              string(3) "lol"
+              ["indices"]=>
+              array(2) {
+                [0]=>
+                int(91)
+                [1]=>
+                int(95)
+              }
+            }
+            [9]=>
+            object(stdClass)#58 (2) {
+              ["text"]=>
+              string(9) "sarcastic"
+              ["indices"]=>
+              array(2) {
+                [0]=>
+                int(96)
+                [1]=>
+                int(106)
+              }
+            }
+            [10]=>
+            object(stdClass)#59 (2) {
+              ["text"]=>
+              string(4) "Xmas"
+              ["indices"]=>
+              array(2) {
+                [0]=>
+                int(107)
+                [1]=>
+                int(112)
+              }
+            }
+          }
+          ["symbols"]=>
+          array(0) {
+          }
+          ["user_mentions"]=>
+          array(0) {
+          }
+          ["urls"]=>
+          array(1) {
+            [0]=>
+            object(stdClass)#61 (4) {
+              ["url"]=>
+              string(23) "https://t.co/VuRxsK1ZND"
+              ["expanded_url"]=>
+              string(52) "https://twitter.com/i/web/status/1067727351293927425"
+              ["display_url"]=>
+              string(29) "twitter.com/i/web/status/1…"
+              ["indices"]=>
+              array(2) {
+                [0]=>
+                int(114)
+                [1]=>
+                int(137)
+              }
+            }
+          }
+        }
+        ["metadata"]=>
+        object(stdClass)#62 (2) {
+          ["iso_language_code"]=>
+          string(2) "en"
+          ["result_type"]=>
+          string(6) "recent"
+        }
+        ["source"]=>
+        string(69) "<a href="https://www.hootsuite.com" rel="nofollow">Hootsuite Inc.</a>"
+        ["in_reply_to_status_id"]=>
+        NULL
+        ["in_reply_to_status_id_str"]=>
+        NULL
+        ["in_reply_to_user_id"]=>
+        NULL
+        ["in_reply_to_user_id_str"]=>
+        NULL
+        ["in_reply_to_screen_name"]=>
+        NULL
+        ["user"]=>
+        object(stdClass)#63 (42) {
+          ["id"]=>
+          int(166169214)
+          ["id_str"]=>
+          string(9) "166169214"
+          ["name"]=>
+          string(15) "Remland Carpets"
+          ["screen_name"]=>
+          string(14) "RemlandCarpets"
+          ["location"]=>
+          string(16) "Folkestone, Kent"
+          ["description"]=>
+          string(113) "For all your online flooring needs check out our website at http://t.co/9MrVW0AHPp or call us on Tel 01303 253399"
+          ["url"]=>
+          string(22) "http://t.co/9MrVW0AHPp"
+          ["entities"]=>
+          object(stdClass)#66 (2) {
+            ["url"]=>
+            object(stdClass)#65 (1) {
+              ["urls"]=>
+              array(1) {
+                [0]=>
+                object(stdClass)#64 (4) {
+                  ["url"]=>
+                  string(22) "http://t.co/9MrVW0AHPp"
+                  ["expanded_url"]=>
+                  string(31) "http://www.remlandcarpets.co.uk"
+                  ["display_url"]=>
+                  string(20) "remlandcarpets.co.uk"
+                  ["indices"]=>
+                  array(2) {
+                    [0]=>
+                    int(0)
+                    [1]=>
+                    int(22)
+                  }
+                }
+              }
+            }
+            ["description"]=>
+            object(stdClass)#68 (1) {
+              ["urls"]=>
+              array(1) {
+                [0]=>
+                object(stdClass)#67 (4) {
+                  ["url"]=>
+                  string(22) "http://t.co/9MrVW0AHPp"
+                  ["expanded_url"]=>
+                  string(31) "http://www.remlandcarpets.co.uk"
+                  ["display_url"]=>
+                  string(20) "remlandcarpets.co.uk"
+                  ["indices"]=>
+                  array(2) {
+                    [0]=>
+                    int(60)
+                    [1]=>
+                    int(82)
+                  }
+                }
+              }
+            }
+          }
+          ["protected"]=>
+          bool(false)
+          ["followers_count"]=>
+          int(12469)
+          ["friends_count"]=>
+          int(944)
+          ["listed_count"]=>
+          int(26)
+          ["created_at"]=>
+          string(30) "Tue Jul 13 14:13:54 +0000 2010"
+          ["favourites_count"]=>
+          int(662)
+          ["utc_offset"]=>
+          NULL
+          ["time_zone"]=>
+          NULL
+          ["geo_enabled"]=>
+          bool(true)
+          ["verified"]=>
+          bool(false)
+          ["statuses_count"]=>
+          int(8061)
+          ["lang"]=>
+          string(2) "en"
+          ["contributors_enabled"]=>
+          bool(false)
+          ["is_translator"]=>
+          bool(false)
+          ["is_translation_enabled"]=>
+          bool(false)
+          ["profile_background_color"]=>
+          string(6) "C0DEED"
+          ["profile_background_image_url"]=>
+          string(48) "http://abs.twimg.com/images/themes/theme1/bg.png"
+          ["profile_background_image_url_https"]=>
+          string(49) "https://abs.twimg.com/images/themes/theme1/bg.png"
+          ["profile_background_tile"]=>
+          bool(false)
+          ["profile_image_url"]=>
+          string(74) "http://pbs.twimg.com/profile_images/903324872725733376/LQ9bA4-C_normal.jpg"
+          ["profile_image_url_https"]=>
+          string(75) "https://pbs.twimg.com/profile_images/903324872725733376/LQ9bA4-C_normal.jpg"
+          ["profile_banner_url"]=>
+          string(58) "https://pbs.twimg.com/profile_banners/166169214/1520001553"
+          ["profile_link_color"]=>
+          string(6) "FAB81E"
+          ["profile_sidebar_border_color"]=>
+          string(6) "FFFFFF"
+          ["profile_sidebar_fill_color"]=>
+          string(6) "DDEEF6"
+          ["profile_text_color"]=>
+          string(6) "333333"
+          ["profile_use_background_image"]=>
+          bool(true)
+          ["has_extended_profile"]=>
+          bool(false)
+          ["default_profile"]=>
+          bool(false)
+          ["default_profile_image"]=>
+          bool(false)
+          ["following"]=>
+          bool(false)
+          ["follow_request_sent"]=>
+          bool(false)
+          ["notifications"]=>
+          bool(false)
+          ["translator_type"]=>
+          string(4) "none"
+        }
+        ["geo"]=>
+        NULL
+        ["coordinates"]=>
+        NULL
+        ["place"]=>
+        NULL
+        ["contributors"]=>
+        NULL
+        ["is_quote_status"]=>
+        bool(false)
+        ["retweet_count"]=>
+        int(16)
+        ["favorite_count"]=>
+        int(29)
+        ["favorited"]=>
+        bool(false)
+        ["retweeted"]=>
+        bool(false)
+        ["possibly_sensitive"]=>
+        bool(false)
+        ["lang"]=>
+        string(2) "en"
+      }
+      ["is_quote_status"]=>
+      bool(false)
+      ["retweet_count"]=>
+      int(16)
+      ["favorite_count"]=>
+      int(0)
+      ["favorited"]=>
+      bool(false)
+      ["retweeted"]=>
+      bool(false)
+      ["lang"]=>
+      string(2) "en"
+    }
+  }
+  ["search_metadata"]=>
+  object(stdClass)#70 (9) {
+    ["completed_in"]=>
+    float(0.087)
+    ["max_id"]=>
+    int(1067777363608518658)
+    ["max_id_str"]=>
+    string(19) "1067777363608518658"
+    ["next_results"]=>
+    string(63) "?max_id=1067777363608518657&q=%23wtf&count=1&include_entities=1"
+    ["query"]=>
+    string(6) "%23wtf"
+    ["refresh_url"]=>
+    string(57) "?since_id=1067777363608518658&q=%23wtf&include_entities=1"
+    ["count"]=>
+    int(1)
+    ["since_id"]=>
+    int(0)
+    ["since_id_str"]=>
+    string(1) "0"
+  }
+}

@@ -29,6 +29,8 @@ class FbBot {
         );
         $this->ROUTES = array(
             'LISTEN' => new TwitterCommand($args),
+            'CANCEL' => new TwitterCommand($args),
+            'TOPICS' => new TwitterCommand($args),
             'REMIND' => new BaseCommand($args)
         );
         $this->DefaultCommand = new BaseCommand($args);
